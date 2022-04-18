@@ -2,10 +2,15 @@ pipeline {
 
     agent any
 
+    tools{
+        maven 'maven-3.8.4'
+    }
+
     stages {
         stage("build") {
             steps {
                 echo 'Building the application'
+                sh 'mvn clean package'
             }
         }
 
