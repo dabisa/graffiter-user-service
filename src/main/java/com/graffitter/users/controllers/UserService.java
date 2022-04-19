@@ -46,6 +46,7 @@ public class UserService {
     private UserRepository userRepo;
     @Autowired
     private FollowingRepository followingRepo;
+    // TODO: use configuration
     @Autowired
     private Configuration configuration;
 
