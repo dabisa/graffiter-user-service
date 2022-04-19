@@ -221,7 +221,7 @@ public class UserService {
         } else {
             return followingRepo.findByFollowee(followee).stream()
                     .map(f -> f.follower)
-                    .map(uname -> userRepo.findById(uname).get()) //
+                    .map(uname -> userRepo.findById(uname).get())
                     .map(user -> MakeUserDTO(username, user))
                     .collect(Collectors.toList());
         }
