@@ -13,7 +13,7 @@ pipeline {
         stage("code-analysis") {
             steps {
                 echo 'Application code analysis'
-                withSonarQubeEnv('sonarqube-server-local') {
+                withSonarQubeEnv('sonarqube-server') {
                     sh 'mvn sonar:sonar'
                 }
             }
