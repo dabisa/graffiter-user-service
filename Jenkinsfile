@@ -50,6 +50,7 @@ pipeline {
                                     removePrefix: 'target',
                                     sourceFiles: 'target/*.jar'
                                 )
+                                sshTransfer(sourceFiles: 'Dockerfile')
                             ],
                             usePromotionTimestamp: false,
                             useWorkspaceInPromotion: false,
