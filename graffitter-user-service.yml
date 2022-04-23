@@ -8,7 +8,7 @@
 
   - name: stop container
     command: docker stop --name graffiter-user-service-instance
-    ignore_error: yes
+    ignore_errors: true
 
   - name: create container
     command: docker run --name graffiter-user-service-instance -d -p 8081:8081 --ulimit nofile=122880:122880 graffiter-user-service .
