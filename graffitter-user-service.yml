@@ -3,12 +3,16 @@
   become: true
 
   tasks:
-  - name: build docker image
-    command: docker build -t graffiter-user-service .
-
   - name: stop container
-    command: docker stop --name graffiter-user-service-instance
-    ignore_errors: true
+    command: docker stop graffiter-user-service-instance
+    ignore_errors: yes
+
+  - name: remove container
+    command: docker rm graffiter-user-service-instance
+    ignore_errors: yes
+
+  - name: build image
+    command: docker build -t graffiter-user-service .
 
   - name: create container
     command: docker run --name graffiter-user-service-instance -d -p 8081:8081 --ulimit nofile=122880:122880 graffiter-user-service .
