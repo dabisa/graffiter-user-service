@@ -34,7 +34,7 @@ pipeline {
                     failOnError: true,
                     publishers: [
                         sshPublisherDesc(
-                            configName: 'docker-host',
+                            configName: 'ansible-server',
                             transfers: [
                                 sshTransfer(
                                     cleanRemote: false,
