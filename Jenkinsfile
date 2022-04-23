@@ -52,7 +52,7 @@ pipeline {
                                 ),
                                 sshTransfer(sourceFiles: 'Dockerfile'),
                                 sshTransfer(sourceFiles: 'graffitter-user-service.yml'),
-                                sshTransfer(execCommand: 'ansible-playbook graffitter-user-service.yml')
+                                sshTransfer(execCommand: '.local/bin/ansible-playbook graffitter-user-service.yml')
                             ],
                             usePromotionTimestamp: false,
                             useWorkspaceInPromotion: false,
