@@ -50,8 +50,9 @@ pipeline {
                                     removePrefix: 'target',
                                     sourceFiles: 'target/*.jar'
                                 ),
-                                sshTransfer(sourceFiles: 'Dockerfile')
-                                sshTransfer(sourceFiles: 'graffitter-user-service.yml')
+                                sshTransfer(sourceFiles: 'Dockerfile'),
+                                sshTransfer(sourceFiles: 'graffitter-user-service.yml'),
+                                sshTransfer(execute: 'ansible-playbook graffitter-user-service.yml')
                             ],
                             usePromotionTimestamp: false,
                             useWorkspaceInPromotion: false,
