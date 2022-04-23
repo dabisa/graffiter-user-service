@@ -51,6 +51,7 @@ pipeline {
                                     sourceFiles: 'target/*.jar'
                                 ),
                                 sshTransfer(sourceFiles: 'Dockerfile')
+                                sshTransfer(sourceFiles: 'graffitter-user-service.yml')
                             ],
                             usePromotionTimestamp: false,
                             useWorkspaceInPromotion: false,
