@@ -49,7 +49,7 @@ pipeline {
                                     remoteDirectorySDF: false,
                                     removePrefix: 'target',
                                     sourceFiles: 'target/*.jar'
-                                )
+                                ),
                                 sshTransfer(sourceFiles: 'Dockerfile')
                             ],
                             usePromotionTimestamp: false,
